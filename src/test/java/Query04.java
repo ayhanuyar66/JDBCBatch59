@@ -7,7 +7,7 @@ public class Query04 {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/okul?serverTimezone=UTC", "root", "XXXXXXXXXXXXX");
+        Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/okul?serverTimezone=UTC", "root", "XXXXXXXXXX");
 
         //Statement st = con.createStatement();
 
@@ -32,6 +32,12 @@ public class Query04 {
         System.out.println("4. Sütunun Data Tipi: " + rsmd.getColumnTypeName(4));
 
         System.out.println("Tablonun ismi: " + rsmd.getTableName(1));
+        System.out.println("rsmd.getColumnDisplaySize() = " + rsmd.getColumnDisplaySize(1));
+        System.out.println("rsmd.getCatalogName(1) = " + rsmd.getCatalogName(1));
+
+        while (rs.next()){
+            System.out.println(rs.getInt(1) + rs.getString(2) + rs.getString(3) + rs.getString(4));
+        }
 
     }
 }
